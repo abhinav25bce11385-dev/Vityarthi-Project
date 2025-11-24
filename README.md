@@ -41,4 +41,4 @@ To verify the functionality of the project, follow these test cases:
 **Test Case 3: Invalid Input**
 1.  Run the program.
 2.  When asked for a choice, enter `5`.
-3.  **Expected Output:** `Hmm, that's not a valid option. Try 1, 2, or 3.
+3.  **Expected Output:** `Hmm, that's not a valid option. Try 1, 2, or 3.`

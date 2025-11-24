@@ -143,15 +143,6 @@ This is a learning project, and contributions are welcome! Here are some ideas:
 
 Feel free to fork, improve, and submit a pull request!
 
-## License
-
-Free to use, modify, and share. Do whatever you want with it! 
-
-## Acknowledgments
-
-Built with and curiosity about how telegraph operators communicated over a century ago.
-
----
 
 **Ready to start sending secret messages?** Download the code and start translating!
 

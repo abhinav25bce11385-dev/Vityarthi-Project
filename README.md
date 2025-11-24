@@ -1,149 +1,69 @@
-# The Morse Code Translator (MCT)
+# Morse Code Translator
 
-> Ever wanted to talk like an old-school telegraph operator? Now you can!
+## Overview
+[cite_start][cite: 84]
+The Morse Code Translator is a Python-based command-line interface (CLI) tool designed to facilitate communication using standard Morse code. This project allows users to encode regular text into Morse code patterns and decode Morse code sequences back into readable English text. It serves as a practical application of string manipulation, dictionary mapping, and user input handling in Python.
 
-This simple Python CLI tool lets you translate back and forth between regular text and the iconic dots and dashes of Morse code. It's a quick, easy way to encode and decode secret messages right in your terminal—no fancy setup required!
+## Features
+[cite_start][cite: 85]
+* **Text-to-Morse Conversion:** Instantly converts alphanumeric characters and punctuation into their corresponding Morse code representations.
+* **Morse-to-Text Conversion:** Decodes Morse code strings back into readable text, intelligently handling character and word spacing.
+* **Interactive Menu System:** A continuous loop interface that allows users to perform multiple translations without restarting the program.
+* **Input Validation:** Includes checks for empty inputs and invalid menu choices to ensure a smooth user experience.
+* **Comprehensive Symbol Map:** Supports letters (A-Z), numbers (0-9), and common punctuation marks.
 
-## What It Can Do
+## Technologies/Tools Used
+[cite_start][cite: 86]
+* **Programming Language:** Python 3.x
+* **Libraries:** Standard Python Library (no external dependencies required)
 
-### Text to Morse
-Give it any message (letters, numbers, even punctuation!) and it will instantly spit out the corresponding dots and dashes. We use a single `/` to mark spaces between words.
+## Steps to Install & Run the Project
+[cite_start][cite: 87]
+1.  **Prerequisites:** Ensure you have Python installed on your machine. You can verify this by typing `python --version` in your terminal.
+2.  **Download:** Save the file `Morse Code Translator 3.py` to a local directory.
+3.  **Run the Application:**
+    * Open your terminal or command prompt.
+    * Navigate to the directory where the file is saved.
+    * Execute the following command:
+        ```bash
+        python "Morse Code Translator 3.py"
+        ```
 
-**Example:**
-```
-Input:  Hello World!
-Output: .... . .-.. .-.. --- / .-- --- .-. .-.. -.. .-.-.-
-```
+## Instructions for Testing
+[cite_start][cite: 88]
+To verify the functionality of the project, follow these test cases:
 
-### Morse to Text
-Paste in your series of dots and dashes, and the translator will turn it back into readable text for you. 
+**Test Case 1: Text to Morse**
+1.  Run the program and select Option **1**.
+2.  Enter the text: `HELLO WORLD`
+3.  **Expected Output:** `.... . .-.. .-.. --- / .-- --- .-. .-.. -..`
 
-**Remember:** Separate letters with single spaces and words with ` / ` (space-slash-space)!
+**Test Case 2: Morse to Text**
+1.  Run the program and select Option **2**.
+2.  Enter the code: `... --- ...`
+3.  **Expected Output:** `SOS`
 
-**Example:**
-```
-Input:  .-- . .-.. -.-. --- -- . / - --- / -- --- .-. ... .
-Output: WELCOME TO MORSE
-```
+**Test Case 3: Invalid Input**
+1.  Run the program.
+2.  When asked for a choice, enter `5`.
+3.  **Expected Output:** `Hmm, that's not a valid option. Try 1, 2, or 3.`
 
-### Easy Menu
-Everything is managed through a simple, friendly menu when you run the script. No complicated commands needed!
+## Screenshots
+[cite_start][cite: 89]
+*(Note: As this is a text-based submission, please run the code to view the interface. Below is a representation of the console output.)*
 
-## Getting Started (It's Quick!)
+```text
+==================================================
+Welcome to Morse Code Translator!
+==================================================
 
-### Prerequisites
-You only need **Python 3** installed on your computer—chances are, you already do!
+What would you like to do?
+  1 - Turn text into morse code
+  2 - Turn morse code into text
+  3 - I'm done, exit
 
-- Python 3.x (any recent version works)
+Your choice: 1
 
-### How to Chat in Code
-
-1. **Save the file**: Make sure the code is saved as a Python file (e.g., `morse_translator.py`)
-
-2. **Open your terminal** and run the script:
-   ```bash
-   python morse_translator.py
-   ```
-
-3. **Follow the prompts!** The main screen will guide you:
-   ```
-   ==================================================
-   Welcome to Morse Code Translator!
-   ==================================================
-
-   What would you like to do?
-     1 - Turn text into morse code
-     2 - Turn morse code into text
-     3 - I'm done, exit
-
-   Your choice: 
-   ```
-
-## Let's See It in Action
-
-### Encoding a Message
-
-Type in your message and watch it transform into Morse code!
-
-```
-Type something: Hello World!
-
+Type something: Python
 Here's your morse code:
-.... . .-.. .-.. --- / .-- --- .-. .-.. -.. .-.-.-
-```
-
-The script automatically converts everything to uppercase and maps out the code. Easy!
-
-### Decoding a Message
-
-Just paste in your Morse sequence and let the magic happen!
-
-```
-Paste your morse code below.
-(Tip: Use spaces between characters, ' / ' between words)
-> .-- . .-.. -.-. --- -- . / - --- / -- --- .-. ... .
-
-Decoded message:
-WELCOME TO MORSE
-```
-
-**Pro-Tip:** Make sure you use that ` / ` to separate your words for the best results!
-
-## Behind the Scenes
-
-The translation magic happens thanks to two simple lookup tables (dictionaries) built right into the script:
-
-### The Dictionaries
-
-1. **`MORSE_MAP`**: The master list, mapping every character (like `'A'`) to its Morse equivalent (like `'.-'`)
-2. **`TEXT_MAP`**: The reverse of the first map, allowing us to quickly look up letters from code
-
-This reverse-dictionary approach is way faster than searching through the list every time!
-
-### The Main Logic
-
-**`convert_to_morse(text)`**
-- Takes your text and uppercases it
-- Builds the code list character by character
-- Substitutes spaces with `/` for word breaks
-
-**`convert_to_text(morse_code)`**
-- Splits the code string into words (at the `/` marker)
-- Then splits words into individual letters (at single spaces)
-- Looks up each code in the TEXT_MAP dictionary
-- Reconstructs the original message
-
-**`main()`**
-- Keeps the whole show running with the interactive menu
-- Handles user input and output
-- Makes everything user-friendly!
-
-## Supported Characters
-
-- **Letters**: A-Z (automatically converted to uppercase)
-- **Numbers**: 0-9
-- **Punctuation**: `,` `.` `?` `/` `-` `(` `)`
-- **Spaces**: Converted to `/` in Morse code
-
-## Fun Morse Code Facts
-
-- **SOS** (`... --- ...`) is the most famous distress signal—easy to recognize, hard to misinterpret!
-- Morse code was invented in the 1830s and is still used today by amateur radio operators
-- You can actually learn to "hear" Morse code with practice!
-
-## Want to Contribute?
-
-This is a learning project, and contributions are welcome! Here are some ideas:
-
-- Add sound output (beeps for dots and dashes)
--  Create a GUI version
--  Add file input/output support
-- Support international Morse code variants
--  Add a practice mode to help users learn Morse code
-
-Feel free to fork, improve, and submit a pull request!
-
-
-**Ready to start sending secret messages?** Download the code and start translating!
-
-If you found this useful, give it a on GitHub!
+.--. -.-- - .... --- -.
